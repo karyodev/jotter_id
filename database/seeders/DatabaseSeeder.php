@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,5 +18,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        DB::table('users')->insert([
+            'id' => 'ACC0402202200001',
+            'nama' => 'Yusup Maulana',
+            'email' => 'yusup@gmail.com',
+            'username' => 'haiucup',
+            'password' => Hash::make('ujicoba1'),
+            'tgl_terbuat' => now(),
+            'wkt_terbuat' => now(),
+            'status' => 'aktif',
+            'role' => 'reader',
+        ]);
     }
 }

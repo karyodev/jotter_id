@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Helpers\Jotter;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         DB::table('users')->insert([
-            'id' => 'ACC0402202200001',
+            'id' => Jotter::makeid(10, 'ACC', 'users' ),
             'nama' => 'Yusup Maulana',
             'email' => 'yusup@gmail.com',
             'username' => 'haiucup',

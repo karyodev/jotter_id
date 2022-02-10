@@ -29,14 +29,14 @@
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" class="form-control" placeholder="Enter Your Password" id="pass_log_id" required autocomplete="OFF" name="password">
-                            <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password p"></span>
                         </div>
 
                         <div class="form-group">
                             <label>Konfirmasi Password</label>
-                            <input type="password" class="form-control" placeholder="Password Confirmation"
-                                id="pass_log_id" required>
-                            <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+                            <input type="password" class="form-control" placeholder="Password Confirmation" required autocomplete="OFF"
+                                id="konfirmasip" required>
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password pk"></span>
                         </div>
 
                         <div class="signup-btn text-center">
@@ -78,15 +78,21 @@
 
 @endsection
 @section('script')
-
     <script>
-        $(document).on('click', '.toggle-password', function() {
+        $(document).on('click', '.p', function() {
 
             $(this).toggleClass("fa-eye fa-eye-slash");
 
             var input = $("#pass_log_id");
             input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
         });
-    </script>
 
+        $(document).on('click', '.pk', function() {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+
+            var input = $("#konfirmasip");
+            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
+        });
+    </script>
 @endsection

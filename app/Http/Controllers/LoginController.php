@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Jotter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -40,6 +42,19 @@ class LoginController extends Controller
             'email' => 'required|max:255|email:dns|unique:users',
             'password' => 'required|max:255|min:3',
         ]);
-        User::create($validateData);
+        $validateData['password'] = Hash::make($request->input('password'));
+        $id = Jotter::makeid(10, 'ACC', 'users' );
+        $data = new User;
+        $data->id = $id;
+        $data->nama = $validateData['nama'];
+        $data->email = $validateData['email'];
+        $data->username = $validateData['username'];
+        $data->password = $validateData['password'];
+        $data->tgl_terbuat = Carbon::now()->isoFormat('YYYY-MM-DD');
+        $data->wkt_terbuat = Carbon::now()->format('H:i:m');
+        $data->status = 'aktif';
+        $data->role = 'reader';
+        $data->save();
+        return redirect('/login');
     }
 }

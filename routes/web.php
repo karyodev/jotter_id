@@ -36,7 +36,7 @@ Route::get('/contact', function () { return view('contact'); });
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
-Route::post('/register',[LoginController::class, 'register']);
 
 //Register
-Route::get('/register', function () { return view('register'); });
+Route::get('/register', function () { return view('register'); })->middleware('guest');
+Route::post('/register',[LoginController::class, 'register']);

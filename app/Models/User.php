@@ -18,6 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     public $timestamps = false;
+    public function getIncrementing(){
+        return false;
+    }
     protected $fillable = [
         'nama',
         'username',

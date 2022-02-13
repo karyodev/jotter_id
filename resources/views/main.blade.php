@@ -90,12 +90,14 @@
                                     <a href="#" class="nav-link dropdown-toggle active text-white">{{ auth()->user()->nama }}</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="/account" class="nav-link">Profile</a>
+                                            <a href="/account" class="nav-link"><i class="bx bx-user mr-2"></i> Profile</a>
                                         </li>
                                         <form action="/logout" method="POST">
                                             @csrf
                                             <li class="nav-item">
-                                                <button type="submit" class="nav-link">Logout</button>
+                                                <div class="nav-link">
+                                                    <button type="submit" class="btn btn-dark w-100 text-left"> <i class='bx bx-log-out mr-2'></i>Log Out</button>
+                                                </div>
                                             </li>
                                         </form>
                                         </ul>

@@ -24,7 +24,10 @@
                             <div class="profile-thumb">
                                 <img src="assets/img/account.jpg" alt="account holder image">
                                 <h3>Alfin Sugestian</h3>
-                                <p>Bergabung sejak Februari 2022</p>
+                                <small><i>Bergabung sejak <b>Februari 2022</b></i></small>
+                            </div>
+                            <div class="profile-thumb">
+                                <button class="btn btn-dark"><i class="bx bx-edit mr-2"></i>Buat Tulisan</button>
                             </div>
 
                             <ul>
@@ -36,38 +39,20 @@
                                 </li>
                                 <li>
                                     <a href="resume.html">
-                                        <i class='bx bxs-file-doc'></i>
+                                        <i class='bx bx-file'></i>
                                         Daftar Tulisan
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class='bx bx-briefcase'></i>
-                                        Applied Job
+                                        <i class='bx bxs-star'></i>
+                                        Berlangganan
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class='bx bx-envelope'></i>
-                                        Messages
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class='bx bx-heart'></i>
-                                        Saved Jobs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class='bx bx-lock-alt' ></i>
-                                        Change Password
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class='bx bx-coffee-togo'></i>
-                                        Delete Account
+                                        <i class='bx bx-tag'></i>
+                                        Tags
                                     </a>
                                 </li>
                                 <li>
@@ -82,153 +67,73 @@
 
                     <div class="col-md-8">
                         <div class="account-details">
-                            <h3>Basic Information</h3>
                             <form class="basic-info">
+                                <h3>Basic Information</h3>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Your Name</label>
-                                            <input type="text" class="form-control" placeholder="Your Name">
+                                            <label>Nama Lengkap</label>
+                                            <input type="text" class="form-control" placeholder="Cth: Jhon Doe">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Your Email</label>
-                                            <input type="email" class="form-control" placeholder="Your Email">
+                                            <label>Username</label>
+                                            <input type="text" class="form-control" placeholder="Cth: jhondoe_">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" placeholder="Cth: jhondoe@gmail.com">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Your Phone</label>
-                                            <input type="number" class="form-control" placeholder="Your Phone">
+                                            <label>No. Telpon</label>
+                                            <input type="number" class="form-control" placeholder="Cth: 08974879215">
                                         </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Job Title</label>
-                                            <input type="text" class="form-control" placeholder="Job Title">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="account-btn">Edit</button>
-                                        <button type="submit" class="account-btn">Save</button>
                                     </div>
                                 </div>
-                            </form>
-
-                            <h3>Address</h3>
-                            <form class="-candidate-address">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Your Country</label>
-                                            <input type="text" class="form-control" placeholder="Your Country">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Your City</label>
-                                            <input type="text" class="form-control" placeholder="Your City">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Zip Code</label>
-                                            <input type="number" class="form-control" placeholder="City Zip">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Region</label>
-                                            <input type="text" class="form-control" placeholder="Your Region">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="account-btn">Edit</button>
-                                        <button type="submit" class="account-btn">Save</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <h3>Other information</h3>
-                            <form class="cadidate-others">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Age</label>
-                                            <input type="number" class="form-control" placeholder="Your Age">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Work Experience</label>
-                                            <input type="number" class="form-control" placeholder="Work Experience">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Language</label>
-                                            <input type="text" class="form-control" placeholder="Language">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Skill</label>
-                                            <input type="text" class="form-control" placeholder="Skills">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="account-btn">Edit</button>
-                                        <button type="submit" class="account-btn">Save</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <h3>Social links</h3>
-                            <form class="candidates-sociak">
+                                
+                                <h3 class="mt-3">Social Links</h3>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Facebook</label>
-                                            <input type="text" class="form-control" placeholder="www.facebook.com/user">
+                                            <input type="text" class="form-control" placeholder="Cth: Alfin Sugestian">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Twitter</label>
-                                            <input type="number" class="form-control" placeholder="www.twitter.com/user">
+                                            <input type="number" class="form-control" placeholder="Cth: helloalfin_">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Linkedin</label>
-                                            <input type="text" class="form-control" placeholder="www.Linkedin.com/user">
+                                            <input type="text" class="form-control" placeholder="Cth: Alfin Sugestian">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Github</label>
-                                            <input type="text" class="form-control" placeholder="www.Github.com/user">
+                                            <label>Instagram</label>
+                                            <input type="text" class="form-control" placeholder="Cth: jhon_doe">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="submit" class="account-btn">Edit</button>
-                                        <button type="submit" class="account-btn">Save</button>
+                                        <button type="submit" class="account-btn">Simpan</button>
                                     </div>
                                 </div>
+                                
                             </form>
+
                         </div>
                     </div>
                 </div>

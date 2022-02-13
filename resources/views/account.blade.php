@@ -4,181 +4,237 @@
 <title>Jotter.id - Account</title>
 @endsection
 @section('body')
-<!-- Account Area Start -->
-<div class="banner-style-three2">
-    <div class="d-table2">
-        <div class="d-table-cell">
-        </div>
-    </div>
-</div>
 
-<div class="container">
-    <div class="find-form">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <img src="assets/img/tes.png" class="rounded-circle" alt="">
-                </div>
+        <!-- Page Title Start -->
+        <section class="page-title title-bg10">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
+        </section>
+        <!-- Page Title End -->
 
-            <div class="col-lg-3">
-                <div class="form-group2">
-                    <h3 class=>Michelle Obama</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="btn btn-primary">Follow</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Account Area End -->
-
-<!-- Blog Section Start -->
-<div class="container">
-    <section class="blog-details-area ptb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Olahraga</li>
-                            <li class="breadcrumb-item"><a href="#">Ekonomi</a></li>
-                            <li class="breadcrumb-item"><a href="#">Teknologi</a></li>
-                            <li class="breadcrumb-item"><a href="#">Puisi</a></li>
-                        </ol>
-                    </nav>
-                    <div class="blog-dedails-text">
-                        <div class="container">
-                            <div class="row pd-10">
-                                <div class="col-lg-4">
-                                    <div class="about-img">
-                                        <img src="assets/img/about.jpg" class="rounded" alt="">
-                                    </div>
-                                </div>
-                                <div class="section-title2">
-                                    <h4>Integer vitae accumsan sem</h4>
-
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="blog-details.html" class="blog-btn">
-                                        Read More
-                                        <i class='bx bx-plus bx-spin'></i>
-                                    </a>
-                                </div>
+        <!-- Account Area Start -->
+        <section class="account-section ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="account-information">
+                            <div class="profile-thumb">
+                                <img src="assets/img/account.jpg" alt="account holder image">
+                                <h3>Alfin Sugestian</h3>
+                                <p>Bergabung sejak Februari 2022</p>
                             </div>
+
+                            <ul>
+                                <li>
+                                    <a href="#" class="active">
+                                        <i class='bx bx-user'></i>
+                                        Profil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resume.html">
+                                        <i class='bx bxs-file-doc'></i>
+                                        Daftar Tulisan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-briefcase'></i>
+                                        Applied Job
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-envelope'></i>
+                                        Messages
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-heart'></i>
+                                        Saved Jobs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-lock-alt' ></i>
+                                        Change Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-coffee-togo'></i>
+                                        Delete Account
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-log-out'></i>
+                                        Log Out
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="container pt-2">
-                            <div class="row pd-10">
-                                <div class="col-lg-4">
-                                    <div class="about-img">
-                                        <img src="assets/img/about.jpg" class="rounded" alt="">
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="account-details">
+                            <h3>Basic Information</h3>
+                            <form class="basic-info">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Your Name</label>
+                                            <input type="text" class="form-control" placeholder="Your Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Your Email</label>
+                                            <input type="email" class="form-control" placeholder="Your Email">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Your Phone</label>
+                                            <input type="number" class="form-control" placeholder="Your Phone">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Job Title</label>
+                                            <input type="text" class="form-control" placeholder="Job Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="account-btn">Edit</button>
+                                        <button type="submit" class="account-btn">Save</button>
                                     </div>
                                 </div>
-                                <div class="section-title2">
-                                    <h4>Integer vitae accumsan sem</h4>
+                            </form>
 
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="blog-details.html" class="blog-btn">
-                                        Read More
-                                        <i class='bx bx-plus bx-spin'></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container pt-2">
-                            <div class="row pd-10">
-                                <div class="col-lg-4">
-                                    <div class="about-img">
-                                        <img src="assets/img/about.jpg" class="rounded" alt="">
+                            <h3>Address</h3>
+                            <form class="-candidate-address">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Your Country</label>
+                                            <input type="text" class="form-control" placeholder="Your Country">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Your City</label>
+                                            <input type="text" class="form-control" placeholder="Your City">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Zip Code</label>
+                                            <input type="number" class="form-control" placeholder="City Zip">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Region</label>
+                                            <input type="text" class="form-control" placeholder="Your Region">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="account-btn">Edit</button>
+                                        <button type="submit" class="account-btn">Save</button>
                                     </div>
                                 </div>
-                                <div class="section-title2">
-                                    <h4>Integer vitae accumsan sem</h4>
+                            </form>
 
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="blog-details.html" class="blog-btn">
-                                        Read More
-                                        <i class='bx bx-plus bx-spin'></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container pt-2">
-                            <div class="row pd-10">
-                                <div class="col-lg-4">
-                                    <div class="about-img">
-                                        <img src="assets/img/about.jpg" class="rounded" alt="">
+                            <h3>Other information</h3>
+                            <form class="cadidate-others">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Age</label>
+                                            <input type="number" class="form-control" placeholder="Your Age">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Work Experience</label>
+                                            <input type="number" class="form-control" placeholder="Work Experience">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Language</label>
+                                            <input type="text" class="form-control" placeholder="Language">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Skill</label>
+                                            <input type="text" class="form-control" placeholder="Skills">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="account-btn">Edit</button>
+                                        <button type="submit" class="account-btn">Save</button>
                                     </div>
                                 </div>
-                                <div class="section-title2">
-                                    <h4>Integer vitae accumsan sem</h4>
+                            </form>
 
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                    <a href="blog-details.html" class="blog-btn">
-                                        Read More
-                                        <i class='bx bx-plus bx-spin'></i>
-                                    </a>
+                            <h3>Social links</h3>
+                            <form class="candidates-sociak">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Facebook</label>
+                                            <input type="text" class="form-control" placeholder="www.facebook.com/user">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Twitter</label>
+                                            <input type="number" class="form-control" placeholder="www.twitter.com/user">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Linkedin</label>
+                                            <input type="text" class="form-control" placeholder="www.Linkedin.com/user">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Github</label>
+                                            <input type="text" class="form-control" placeholder="www.Github.com/user">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="account-btn">Edit</button>
+                                        <button type="submit" class="account-btn">Save</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4">
-                    <div class="followers-widget">
-                        <div class="container">
-                            <div class="followers-title">
-                                <h5 class="d-flex flex-row">Followers (12)</h5>
-                            </div>
-                            <div class="row pd-10">
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                            </div>
-                            <div class="row pt-2">
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                            </div>
-                            <div class="row pt-2">
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="assets/img/tes2.png" class="rounded-circle" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-</div>
-<!-- Blog Section End -->
+        </section>
+        <!-- Account Area End -->
 @endsection
 @section('script')
 @endsection

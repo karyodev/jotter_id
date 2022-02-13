@@ -366,7 +366,7 @@
                             aria-selected="false">fiksi</a>
                     </li>
                 </ul>
-                <div class="tab-content">
+                <div class="tab-content mt-3">
                     <div class="tab-pane fade show active" id="bola" role="tabpanel">
                         <div class="pd-20">
                             <div class="row">

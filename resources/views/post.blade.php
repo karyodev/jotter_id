@@ -1,7 +1,7 @@
 @extends('main')
 @section('title')
 <!-- Title CSS -->
-<title>Jotter.id - Account</title>
+<title>Jotter.id - Create Post</title>
 @endsection
 @section('body')
 
@@ -27,12 +27,12 @@
                                 <small><i>Bergabung sejak <b>Februari 2022</b></i></small>
                             </div>
                             <div class="profile-thumb">
-                                <a href="/post" class="btn btn-dark"><i class="bx bx-edit mr-2"></i>Buat Tulisan</a>
+                                <button class="btn btn-dark"><i class="bx bx-edit mr-2"></i>Buat Tulisan</button>
                             </div>
 
                             <ul>
                                 <li>
-                                    <a href="/account" class="active">
+                                    <a href="#" class="active">
                                         <i class='bx bx-user'></i>
                                         Profil
                                     </a>

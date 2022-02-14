@@ -31,6 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
     @yield('title')
 </head>
 
@@ -72,7 +73,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand" href="/">
-                        <h3 style="font-family: 'STIX Two Text', serif;" class="text-white mt-2">Jotter.id</h3>
+                        Jotter.id
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto ">

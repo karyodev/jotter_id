@@ -27,6 +27,10 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
     @yield('title')
 </head>
 
@@ -68,7 +72,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <h3 style="font-family: 'STIX Two Text', serif;" class="text-white mt-2">Jotter.id</h3>
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto ">
@@ -83,31 +87,34 @@
                             </li>
                         </ul>
                         {{-- UNTUK WELCOME + BUTTON LOGOUT --}}
-                        @auth    
-                        <div class="other-option">
-                            <ul class="navbar-nav m-auto ">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle active text-white">{{ auth()->user()->nama }}</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="/account" class="nav-link"><i class="bx bx-user mr-2"></i> Profile</a>
-                                        </li>
-                                        <form action="/logout" method="POST">
-                                            @csrf
+                        @auth
+                            <div class="other-option">
+                                <ul class="navbar-nav m-auto ">
+                                    <li class="nav-item">
+                                        <a href="#"
+                                            class="nav-link dropdown-toggle active text-white">{{ auth()->user()->nama }}</a>
+                                        <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <div class="nav-link">
-                                                    <button type="submit" class="btn btn-dark w-100 text-left"> <i class='bx bx-log-out mr-2'></i>Log Out</button>
-                                                </div>
+                                                <a href="/account" class="nav-link"><i class="bx bx-user mr-2"></i>
+                                                    Profile</a>
                                             </li>
-                                        </form>
+                                            <form action="/logout" method="POST">
+                                                @csrf
+                                                <li class="nav-item">
+                                                    <div class="nav-link">
+                                                        <button type="submit" class="btn btn-dark w-100 text-left"> <i
+                                                                class='bx bx-log-out mr-2'></i>Log Out</button>
+                                                    </div>
+                                                </li>
+                                            </form>
                                         </ul>
                                     </li>
                                 </ul>
-                        </div>
+                            </div>
                         @else
-                        <div class="other-option">
-                            <a href="/login" class="signin-btn bg-white text-dark">Sign In</a>
-                        </div>
+                            <div class="other-option">
+                                <a href="/login" class="signin-btn bg-white text-dark">Sign In</a>
+                            </div>
                         @endauth
                     </div>
                 </nav>

@@ -9,4 +9,9 @@ class AccountController extends Controller
     public function index(){
         return view('account');
     }
+
+    public function tags()
+    {
+        return view('tags/tags');
+    }
 }

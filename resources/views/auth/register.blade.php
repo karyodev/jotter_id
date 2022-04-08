@@ -63,7 +63,7 @@
                         <div class="create-btn text-center">
                             <p>
                                 Have an Account?
-                                <a href="signin.html">
+                                <a href="/login">
                                     Sign In
                                     <i class='bx bx-chevrons-right bx-fade-right'></i>
                                 </a>

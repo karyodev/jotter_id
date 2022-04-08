@@ -22,6 +22,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 // ACCOUNT
 Route::get('/account', [AccountController::class, 'index']);
+Route::get('/tags', [AccountController::class, 'tags']);
 
 // BLOG DETAIL
 Route::get('/blog-detail', [BlogDetailController::class, 'index']);
@@ -33,13 +34,23 @@ Route::get('/about', function () { return view('about'); });
 Route::get('/contact', function () { return view('contact'); });
 
 // login
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
+
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login',  'index')->middleware('guest')->name('login');
+    Route::post('/login', 'login');
+    Route::post('/logout', 'logout')->name('logout');
+    Route::post('/register', 'register');
+
+});
+
 
 //Register
-Route::get('/register', function () { return view('register'); })->middleware('guest');
-Route::post('/register',[LoginController::class, 'register']);
+Route::get('/register', function () { return view('auth/register'); })->middleware('guest');
 
 // ACCOUNT
-Route::get('/post', [PostController::class, 'index']);
+// Route::controller(PostController::class)->group(function () {
+//     Route::get('/post', 'index');
+
+// });
+
+Route::get('/post', function () { return view('post/post'); });

@@ -31,7 +31,7 @@
     position: relative;
   }
   .navbar-area .mean-container .mean-bar {
-    background-color: #F0EFEF;
+    background-color: #000;
     padding: 0;
   }
   .navbar-area .mean-container .mean-bar nav .navbar-nav {
@@ -764,7 +764,7 @@
     font-size: 20px;
   }
   .navbar-area .mean-container .mean-bar {
-    background-color: #F0EFEF;
+    background-color: #000;
     padding: 0;
   }
   .navbar-area .mean-container a.meanmenu-reveal {
@@ -774,6 +774,7 @@
     position: relative;
     top: 8px;
     margin-top: -5px;
+    color: #fff;
   }
   .navbar-area .mobile-nav nav .navbar-nav {
     height: 300px;
@@ -1104,6 +1105,7 @@
   /* Navbar CSS */
   .navbar-area .main-nav .navbar .navbar-nav .nav-item .nav-link {
     font-size: 15px;
+    color: #fff;
   }
   .navbar-area .main-nav .navbar .other-option {
     top: -2px;

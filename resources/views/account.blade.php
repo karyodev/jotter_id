@@ -20,10 +20,7 @@
         <section class="account-section ptb-100">
            <div class="container">
                 <div class="row">
-                                    @include('sidebar-account')
                 @include('sidebar-account')
-
-
                     <div class="col-md-8">
                         <div class="account-details">
                             <form class="basic-info">

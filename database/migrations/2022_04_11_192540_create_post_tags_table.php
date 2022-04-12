@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('post_tags', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('post');
+            $table->string('blogs');
             $table->string('tags');
             $table->dateTime('created_post_tags');
-            $table->foreign('post')->references('id')->on('blogs');
+            $table->foreign('blogs')->references('id')->on('blogs');
             $table->foreign('tags')->references('id')->on('tags');
         });
     }

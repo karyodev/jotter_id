@@ -21,8 +21,11 @@ use App\Http\Controllers\BlogDetailController;
 Route::get('/', [HomeController::class, 'index']);
 
 // ACCOUNT
-Route::get('/account', [AccountController::class, 'index']);
-Route::get('/tags', [AccountController::class, 'tags']);
+Route::controller(AccountController::class)->group(function(){
+    Route::get('/account', 'index');
+    Route::post('/account', 'update');
+    Route::get('/tags', 'tags');
+});
 
 // BLOG DETAIL
 Route::get('/blog-detail', [BlogDetailController::class, 'index']);

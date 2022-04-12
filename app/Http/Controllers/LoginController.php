@@ -53,7 +53,7 @@ class LoginController extends Controller
         $data->password = $validateData['password'];
         $data->created_user = Carbon::now();
         $data->status = 'aktif';
-        $data->role = 'reader';
+        $data->role = 'RL002';
         $data->ava = '';
         $data->save();
         return redirect('/login');

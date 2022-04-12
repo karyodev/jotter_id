@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('socials', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('user');
-            $table->string('type_socials')->unique();
+            $table->string('type_socials');
             $table->string('username_acc');
             $table->dateTime('created_socials');
             $table->string('status');

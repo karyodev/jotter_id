@@ -23,32 +23,32 @@
                 @include('sidebar-account')
                     <div class="col-md-8">
                         <div class="account-details">
-                            <form class="basic-info" action="" method="POST">
+                            <form class="basic-info" action="/account" method="POST">
                                 @csrf
                                 <h3>Basic Information</h3>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Nama Lengkap</label>
-                                            <input type="text" class="form-control" placeholder="Cth: Jhon Doe" name="nama" required value="" autocomplete="OFF">
+                                            <input type="text" class="form-control" placeholder="Cth: Jhon Doe" name="nama" required value="{{ $user->nama }}" autocomplete="OFF">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Username</label>
-                                            <input type="text" class="form-control" placeholder="Cth: jhondoe_" name="username" required value="" autocomplete="OFF">
+                                            <input type="text" class="form-control" placeholder="Cth: jhondoe_" name="username" required value="{{ $user->username }}" autocomplete="OFF">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" class="form-control" placeholder="Cth: jhondoe@gmail.com" name="email" required value="" autocomplete="OFF">
+                                            <input type="email" class="form-control" placeholder="Cth: jhondoe@gmail.com" name="email" required value="{{ $user->email }}" autocomplete="OFF">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>No. Telpon</label>
-                                            <input type="number" class="form-control" placeholder="Cth: 08974879215" name="telp" required value="" autocomplete="OFF">
+                                            <input type="text" class="form-control" placeholder="Cth: 08974879215" name="telp" required value="{{ $user->telp }}" autocomplete="OFF">
                                         </div>
                                     </div>
                                 </div>
@@ -57,21 +57,19 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label>Facebook</label>
-                                            <input type="text" class="form-control" placeholder="Cth: Alfin Sugestian" name="facebook" value="">
+                                            <input type="text" class="form-control" placeholder="Cth: Alfin Sugestian" autocomplete="OFF" name="facebook" value="@if ($facebook) {{ $facebook->username_acc }}@endif">
                                         </div>
                                     </div>
-
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label>Twitter</label>
-                                            <input type="number" class="form-control" placeholder="Cth: helloalfin_" name="twitter" value="">
+                                            <input type="number" class="form-control" placeholder="Cth: helloalfin_" name="twitter" autocomplete="OFF" value="@if ($twitter) {{ $twitter->username_acc }} @endif">
                                         </div>
                                     </div>
-
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label>Linkedin</label>
-                                            <input type="text" class="form-control" placeholder="Cth: Alfin Sugestian" name="linkedin" value="">
+                                            <input type="text" class="form-control" placeholder="Cth: Alfin Sugestian" name="linkedin" autocomplete="OFF" value="@if($linkedin){{ $linkedin->username_acc }} @endif">
                                         </div>
                                     </div>                                    
                                     <div class="col-md-12">

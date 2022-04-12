@@ -15,14 +15,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('role');
             $table->string('nama');
             $table->string('email')->unique();
+            $table->string('telp')->unique();
             $table->string('username')->unique();
             $table->string('password');
-            $table->date('tgl_terbuat');
-            $table->time('wkt_terbuat');
+            $table->dateTime('created_user');
             $table->string('status');
-            $table->string('role');
+            $table->string('ava');
+            $table->foreign('role')->references('id')->on('roles');
         });
     }
 

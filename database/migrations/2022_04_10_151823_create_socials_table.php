@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('user');
             $table->string('type_socials')->unique();
-            $table->string('username');
+            $table->string('username_acc');
             $table->dateTime('created_socials');
             $table->string('status');
             $table->foreign('user')->references('id')->on('users');

@@ -47,13 +47,14 @@ class LoginController extends Controller
         $data = new User;
         $data->id = $id;
         $data->nama = $validateData['nama'];
+        $data->telp = '';
         $data->email = $validateData['email'];
         $data->username = $validateData['username'];
         $data->password = $validateData['password'];
-        $data->tgl_terbuat = Carbon::now()->isoFormat('YYYY-MM-DD');
-        $data->wkt_terbuat = Carbon::now()->format('H:i:m');
+        $data->created_user = Carbon::now();
         $data->status = 'aktif';
         $data->role = 'reader';
+        $data->ava = '';
         $data->save();
         return redirect('/login');
     }

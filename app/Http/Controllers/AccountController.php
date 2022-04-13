@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Socials;
+use Carbon\Carbon;
 use App\Models\User;
+use App\Helpers\Jotter;
+use App\Models\Socials;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class AccountController extends Controller
 {
@@ -32,15 +35,34 @@ class AccountController extends Controller
         $user->username = $validateData['username'];
         $user->save();
 
-        $facebook = request()->input('facebook');
-        $twitter = request()->input('twitter');
-        $linkedin = request()->input('linkedin');
-        if($facebook){
-            $socials =  Socials::find(['user'=> auth()->user()->id, 'type_socials' => 'facebook']);
-            if($socials){
-                dd('ada');
+        for($i=1; $i<=3; $i++){
+            if($i==1){
+                $socials = 'facebook';
+                $input = request()->input('facebook');
+            } elseif($i==2){
+                $socials = 'twitter';
+                $input = request()->input('twitter');
             } else {
-                dd($socials);
+                $socials = 'linkedin';
+                $input = request()->input('linkedin');
+            }
+            if($input){
+                $acc =  Socials::where(['user'=> auth()->user()->id, 'type_socials' => $socials])->first();
+                if($acc){
+                    $acc = Socials::find($acc->id);
+                    $acc->username_acc = $input;
+                    $acc->save();
+                } else {
+                    $id = Jotter::makeid(10, 'SCL', 'socials' );
+                    $data = new Socials;
+                    $data->id = $id;
+                    $data->user = auth()->user()->id;
+                    $data->type_socials = $socials;
+                    $data->username_acc = $input;
+                    $data->created_socials = Carbon::now();
+                    $data->status = 'aktif';
+                    $data->save();
+                }
             }
         }
         return redirect('/account');

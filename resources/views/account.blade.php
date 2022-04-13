@@ -63,7 +63,7 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label>Twitter</label>
-                                            <input type="number" class="form-control" placeholder="Cth: helloalfin_" name="twitter" autocomplete="OFF" value="@if ($twitter) {{ $twitter->username_acc }} @endif">
+                                            <input type="text" class="form-control" placeholder="Cth: helloalfin_" name="twitter" autocomplete="OFF" value="@if ($twitter) {{ $twitter->username_acc }} @endif">
                                         </div>
                                     </div>
                                     <div class="col-lg-4">

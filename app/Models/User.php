@@ -21,6 +21,11 @@ class User extends Authenticatable
     public function getIncrementing(){
         return false;
     }
+
+    public function blogs(){
+        return $this->morphTo();
+    }
+    
     protected $fillable = [
         'nama',
         'username',

@@ -19,50 +19,22 @@
         <div class="container">
             <div class="row">
                 @include('sidebar-account')
-
-
                 <div class="col-md-8">
                     <div class="account-details">
-                        <form class="basic-info">
-
+                        @foreach ($blogs as $b)
+                        <a href="/post/detailpost/{{ $b->id }}">
                             <div class="blog-widget blog-tags mt-2">
-                                <h3>Buat Tulisan</h3>
-                                <div id="editor"></div>
+                                @php
+                                    $xt = strpos($b->post, '</h2><p>&nbsp;</p>');
+                                    $judul = substr($b->post, 4, (int)$xt-4);
+                                    $text = substr($b->post, (int)$xt+21, 200);
+                                @endphp
+                                <h3>{{ $judul }}</h3>
+                                <p>{{ $text }}. . . . .</p>
                             </div>
-                            <div class="blog-widget blog-tags mt-2">
-                                <h3>Add Your Tags</h3>
-                                <ul>
-                                    <li>
-                                        <a href="#">Web Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Job Tips</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">UX Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tips & Tricks</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Writting</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Resume</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="text-right mt-2">
-                                <a href="/blog-detail" class="account-btn py-2">View</a>
-                                <button type="submit" class="account-btn">Simpan</button>
-                            </div>
+                        </a>
+                        @endforeach
                     </div>
-
-                    </form>
-
                 </div>
             </div>
         </div>

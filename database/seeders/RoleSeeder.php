@@ -16,6 +16,16 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        
+        $data = ['admin', 'reader', 'writer'];
+        $n = count($data);
+        for($i=0; $i<$n; $i++){
+            $id = sprintf("%03s", $i);
+            DB::table('roles')->insert([
+                'id' => 'RL'.$id,
+                'name_roles' => $data[$i],
+                'status_roles' => 'aktif',
+                'created_roles' => now(),
+            ]);
+        }
     }
 }

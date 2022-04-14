@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Tags;
 use App\Models\User;
 use App\Helpers\Jotter;
+use App\Models\Blog;
+use App\Models\Post_tags;
 use App\Models\Socials;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class AccountController extends Controller
 {
+    // ACCOUNT
     public function index(){
         $data = [
             'user' => User::where('id', auth()->user()->id)->first(),
@@ -68,6 +72,73 @@ class AccountController extends Controller
         return redirect('/account');
     }
 
+    // CONTENT
+    public function content(){
+        $data = [
+            'user' => User::where('id', auth()->user()->id)->first(),
+            'tags' => Tags::where('status_tags', 'aktif')->orderBy('name_tags', 'ASC')->get(),
+        ];
+        return view('post/content', $data);
+    }
+
+    public function created_content(){
+        $tags = request()->input('tags');
+        if($tags){
+            $validateData = request()->validate([
+                'content' => 'required|min:3',
+            ]);
+            $id = Jotter::makeid(10, 'BLOG', 'blogs' );
+            $data = new Blog;
+            $data->id = $id;
+            $data->user = auth()->user()->id;
+            $data->post = $validateData['content'];
+            $data->status_blogs = 'aktif';
+            $data->created_blogs = Carbon::now();
+            $data->save();
+
+            $n = count($tags);
+            for ($i=0; $i < $n ; $i++) { 
+                $id_pt = Jotter::makeid(10, 'PT', 'post_tags' );
+                $data = new Post_tags;
+                $data->id = $id_pt;
+                $data->blogs = $id;
+                $data->tags = $tags[$i];
+                $data->created_post_tags = Carbon::now();
+                $data->save();
+            }
+        }
+        return redirect('/content');
+    }
+
+    // POST
+    public function post(){
+        $data = [
+            'user' => User::where('id', auth()->user()->id)->first(),
+            'blogs' => Blog::where(['user' => auth()->user()->id, 'status_blogs' => 'aktif' ])->orderBy('created_blogs', 'DESC')->get(),
+        ];
+        return view('post/post', $data);    
+    }
+
+    public function detailpost(){
+        if(request()->session()->has('post')){
+            $id = request()->session()->pull('post');
+            request()->session()->put('post', $id);
+            $data = [
+                'blogs' => Blog::join('users', 'users.id', '=', 'blogs.user')->where('blogs.id', $id)->first(),
+                'tags' => Post_tags::join('tags', 'tags.id', '=', 'post_tags.tags')->where('blogs', $id)->orderBy('name_tags', 'ASC')->get(),
+            ];
+            return view('blog-detail', $data);
+        } else {
+            return redirect('/post');
+        }
+    }
+
+    public function findpost($id){
+        request()->session()->put('post', $id);
+        return redirect('detailpost');
+    }
+
+    // TAGS
     public function tags()
     {
         return view('tags/tags');

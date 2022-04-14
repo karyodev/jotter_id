@@ -2,11 +2,11 @@
     <div class="account-information">
         <div class="profile-thumb">
             <img src="assets/img/account.jpg" alt="account holder image">
-            <h3>Alfin Sugestian</h3>
-            <small><i>Bergabung sejak <b>Februari 2022</b></i></small>
+            <h3>{{ $user->nama }}</h3>
+            <small><i>Bergabung sejak <b>{{ date('d F Y', strtotime($user->created_user)) }}</b></i></small>
         </div>
         <div class="profile-thumb">
-            <button class="btn btn-dark rounded-0 px-4"><i class="bx bx-edit mr-2"></i>Buat Tulisan</button>
+            <a href="/content"> <button class="btn btn-dark rounded-0 px-4">  <i class="bx bx-edit mr-2"></i>Buat Tulisan</button></a>
         </div>
 
         <ul>

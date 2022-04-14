@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post_tags extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    public function getIncrementing(){
+        return false;
+    }
 }

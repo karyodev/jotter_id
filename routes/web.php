@@ -25,6 +25,11 @@ Route::controller(AccountController::class)->group(function(){
     Route::get('/account', 'index');
     Route::post('/account', 'update');
     Route::get('/tags', 'tags');
+    Route::get('/content', 'content');
+    Route::post('/content', 'created_content');
+    Route::get('/post', 'post');
+    Route::get('/post/detailpost/{id}', 'findpost');
+    Route::get('/detailpost', 'detailpost');
 });
 
 // BLOG DETAIL
@@ -43,17 +48,9 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('/login', 'login');
     Route::post('/logout', 'logout')->name('logout');
     Route::post('/register', 'register');
-
 });
 
 
 //Register
 Route::get('/register', function () { return view('auth/register'); })->middleware('guest');
 
-// ACCOUNT
-// Route::controller(PostController::class)->group(function () {
-//     Route::get('/post', 'index');
-
-// });
-
-Route::get('/post', function () { return view('post/post'); });

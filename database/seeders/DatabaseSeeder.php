@@ -18,22 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1; $i<=3; $i++){
-            if($i==1) {
-                $role = "admin";
-            } elseif ($i==2){
-                $role = "reader";
-            } else {
-                $role = "writer";
-            }
-            $id = sprintf("%03s", $i);
-            DB::table('roles')->insert([
-                'id' => 'RL'.$id,
-                'name_roles' => $role,
-                'status_roles' => 'aktif',
-                'created_roles' => now(),
-            ]);
-        }
+        $this->call([
+            RoleSeeder::class,
+            TagsSeeder::class,
+        ]);
         // \App\Models\User::factory(10)->create();
         DB::table('users')->insert([
             'id' => Jotter::makeid(10, 'ACC', 'users' ),

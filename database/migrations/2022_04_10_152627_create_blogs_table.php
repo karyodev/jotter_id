@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('user');
-            $table->string('post');
+            $table->text('post');
             $table->string('status_blogs');
             $table->dateTime('created_blogs');
             $table->foreign('user')->references('id')->on('users');

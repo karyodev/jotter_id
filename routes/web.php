@@ -33,7 +33,7 @@ Route::controller(AccountController::class)->group(function(){
 });
 
 // BLOG DETAIL
-Route::get('/blog-detail', [BlogDetailController::class, 'index']);
+// Route::get('/blog-detail', [BlogDetailController::class, 'index']);
 
 // ABOUT
 Route::get('/about', function () { return view('about'); });

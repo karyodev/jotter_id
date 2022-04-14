@@ -25,12 +25,15 @@
                         <a href="/post/detailpost/{{ $b->id }}">
                             <div class="blog-widget blog-tags mt-2">
                                 @php
-                                    $xt = strpos($b->post, '</h2><p>&nbsp;</p>');
-                                    $judul = substr($b->post, 4, (int)$xt-4);
-                                    $text = substr($b->post, (int)$xt+21, 200);
+                                    $xb = strpos($b->post, '</');
+                                    $xa = strpos($b->post, '>');
+                                    $judul = substr($b->post, $xa+1, $xb - $xa-1);
+                                    $text =  preg_replace("/&nbsp;/","", substr($b->post, (int)$xb+$xa+2, 200));;
                                 @endphp
+                                {{-- <h3>{!! '$judul' !!}</h3> --}}
                                 <h3>{{ $judul }}</h3>
-                                <p>{{ $text }}. . . . .</p>
+                                <p>{!! $text !!}. . . . .</p>
+                                {{-- <p>{{ $b->post }}. . . . .</p> --}}
                             </div>
                         </a>
                         @endforeach

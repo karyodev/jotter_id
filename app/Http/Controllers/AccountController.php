@@ -141,6 +141,9 @@ class AccountController extends Controller
     // TAGS
     public function tags()
     {
-        return view('tags/tags');
+        $data = [
+            'user' => User::where('id', auth()->user()->id)->first(),
+        ];
+        return view('tags/tags', $data);
     }
 }

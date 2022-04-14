@@ -10,35 +10,40 @@
         </div>
 
         <ul>
-            <li>
+            <li class="pl-2 pr-2">
                 <a href="/account" class="active">
                     <i class='bx bx-user'></i>
                     Profil
                 </a>
             </li>
-            <li>
+            <li class="pl-2 pr-2">
                 <a href="/post">
                     <i class='bx bx-file'></i>
                     Daftar Tulisan
                 </a>
             </li>
-            <li>
+            <li class="pl-2 pr-2">
                 <a href="#">
                     <i class='bx bxs-star'></i>
                     Berlangganan
                 </a>
             </li>
-            <li>
+            <li class="pl-2 pr-2">
                 <a href="/tags">
                     <i class='bx bx-tag'></i>
                     Tags
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bx-log-out'></i>
-                    Log Out
-                </a>
+                <form  action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="text-justify" style="width: 100%">
+                        <a>
+                            <i class='bx bx-log-out'></i>
+                            Log Out
+                        </a>
+                    </button>
+                </form>
             </li>
         </ul>
     </div>

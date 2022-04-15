@@ -13,10 +13,10 @@
                 <div class="blog-dedails-text text-center">
                     <div class="blog-details-img text-center">
                         @php
-                            $xt = strpos($blogs->post, '</h2><p>&nbsp;</p>');
-                            $judul = substr($blogs->post, 4, (int)$xt-4);
-                            $text = substr($blogs->post, (int)$xt+21, 200);
-                            $postt = substr($blogs->post, (int)$xt+18);
+                            $xb = strpos($blogs->post, '</');
+                            $xa = strpos($blogs->post, '>');
+                            $judul = substr($blogs->post, $xa+1, $xb - $xa-1);
+                            $text =  preg_replace("/&nbsp;/","", substr($blogs->post, (int)$xb+$xa+2, 200));;
                             $n = count($tags);
                             $i=0;
                         @endphp
@@ -44,7 +44,7 @@
                         </div>
                         <img src="assets/img/blog/blog-details.jpg" alt="blog details image">
                     </div>
-                    {!! $postt !!}
+                    {!! $text !!}
 
                     <div class="details-tag">
                         <ul>

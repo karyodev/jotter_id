@@ -143,6 +143,7 @@ class AccountController extends Controller
     {
         $data = [
             'user' => User::where('id', auth()->user()->id)->first(),
+            'tags' => Tags::where('status_tags', 'aktif')->orderBy('name_tags', 'ASC')->get(),
         ];
         return view('tags/tags', $data);
     }

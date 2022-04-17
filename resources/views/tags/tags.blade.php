@@ -27,27 +27,24 @@
                             <div class="blog-widget blog-tags">
                                 <h3>Add Your Interest</h3>
                                 <ul>
-                                    <li>
-                                        <a href="#">Web Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Job Tips</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">UX Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tips & Tricks</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Writting</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Resume</a>
-                                    </li>
+                                    @foreach ($tags as $t)
+                                        <li class="mr-4">
+                                            {{-- <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="{{ $t->id }}"
+                                                    name="tags[]">
+                                                <label class="form-check-label"
+                                                    for="defaultCheck1">{{ $t->name_tags }}</label>
+                                            </div> --}}
+                                            <div data-toggle="buttons">
+                                                <label class="btn btn-outline-dark">
+                                                    <input type="checkbox" autocomplete="off" class="-ml-2"
+                                                        value="{{ $t->id }}" name="tags[]" style="opacity: 0">
+                                                    {{ $t->name_tags }}
+                                                </label>
+                                            </div>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                             </div>
 
@@ -68,9 +65,14 @@
 
 @section('script')
     <script>
-        $(document).ready(function() {
-            $('.js-example-basic-multiple').select2();
+        $('[data-toggle="buttons"] .btn').on('click', function() {
+            // toggle style
+            $(this).toggleClass('btn-outline-dark btn-outline-dark active');
+            // toggle checkbox
+            var $chk = $(this).find('[type=checkbox]');
+            $chk.prop('checked', !$chk.prop('checked'));
+
+            return false;
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endsection

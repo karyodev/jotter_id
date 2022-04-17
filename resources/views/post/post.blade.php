@@ -23,24 +23,7 @@
                     <div class="account-details">
                         @foreach ($blogs as $b)
                             <a href="/post/detailpost/{{ $b->id }}">
-                                {{-- <div class="blog-widget blog-tags mt-2">
-                                    @php
-                                        $xb = strpos($b->post, '</');
-                                        $xa = strpos($b->post, '>');
-                                        $judul = substr($b->post, $xa + 1, $xb - $xa - 1);
-                                        $text = preg_replace('/&nbsp;/', '', substr($b->post, (int) $xb + $xa + 2, 200));
-                                    @endphp
-                                    {{-- <h3>{!! '$judul' !!}</h3> --}}
-                                {{-- <h3>{{ $judul }}</h3> --}}
-                                {{-- <p>{!! $text !!}. . . . .</p> --}}
-                                {{-- <p>{{ $b->post }}. . . . .</p> --}}
-                                {{-- </div> --}}
                                 <div class="blog-card">
-                                    {{-- <div class="blog-img">
-                                        <a href="/post/detailpost/{{ $b->id }}">
-                                            <img src="{{ asset('assets/img/banner/1.jpg') }}" alt="blog image">
-                                        </a>
-                                    </div> --}}
                                     <div class="blog-text">
                                         <ul>
                                             <li>
@@ -49,13 +32,12 @@
                                             </li>
                                             <li>
                                                 <i class='bx bx-calendar'></i>
-                                                {{ date('d M Y') }}
+                                                {{ date('d F Y', strtotime($b->created_blogs)) }}
                                             </li>
                                             <li class="text-success">
                                                 <i class='bx bx-menu-alt-left'></i>
                                                 Published
                                             </li>
-
                                         </ul>
                                         @php
                                             $xb = strpos($b->post, '</');
@@ -64,14 +46,13 @@
                                             $text = preg_replace('/&nbsp;/', '', substr($b->post, (int) $xb + $xa + 2, 200));
                                         @endphp
                                         <h3>
-                                            <a href="blog-details.html">
+                                            <a href="/post/detailpost/{{ $b->id }}">
                                                 {{ $judul }}
                                             </a>
                                         </h3>
-                                        <p>
-                                            {!! $text !!}
-                                            Ini isi artikelnyaa..
-                                        </p>
+                                        <a href="/post/detailpost/{{ $b->id }}">
+                                            <p>{!! $text !!}Ini isi artikelnyaa..</p>
+                                        </a>
                                         <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="candidate-skill">
@@ -106,8 +87,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </a>

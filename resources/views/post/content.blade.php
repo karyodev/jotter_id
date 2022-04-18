@@ -15,7 +15,7 @@
     <!-- Page Title End -->
 
     <!-- Account Area Start -->
-    <section class="account-section ptb-100">
+    <section class="account-section ptb-100 w-100">
         <div class="container">
             <div class="row">
                 @include('sidebar-account')
@@ -25,7 +25,8 @@
                             @csrf
                             <div class="blog-widget blog-tags mt-2">
                                 <h3>Buat Tulisan</h3>
-                                <textarea class="form-control" name="content" id="editor"></textarea>
+                                <input type="text" class="form-control mb-3" placeholder="Title">
+                                <textarea class="form-control" name="content" id="editor" ></textarea>
                             </div>
                             <div class="blog-widget blog-tags mt-2">
                                 <h3>Kategori Tulisan</h3>
@@ -47,11 +48,13 @@
                                             </div>
                                         </li>
                                     @endforeach
-                                    
+
                                 </ul>
                             </div>
                             <div class="text-right mt-2">
-                                <button type="button" class="account-btn btn-outline-dark bg-transparent text-dark border border-dark">Save as Draft</button>
+                                <button type="button"
+                                    class="account-btn btn-outline-dark bg-transparent text-dark border border-dark">Save as
+                                    Draft</button>
                                 <button type="submit" class="account-btn">Publish</button>
                             </div>
                         </form>
@@ -65,15 +68,16 @@
 @endsection
 
 @section('script')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
+        $(document).ready(function() {
+            $('#editor').summernote({
+                placeholder: 'Hello Bootstrap 4',
+                tabsize: 2,
+                height: 500
             });
+        });
     </script>
 
     <script>

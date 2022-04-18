@@ -51,7 +51,7 @@
                                             </a>
                                         </h3>
                                         <a href="/post/detailpost/{{ $b->id }}">
-                                            <p>{!! $text !!}Ini isi artikelnyaa..</p>
+                                            <p>{!! $text !!}</p>
                                         </a>
                                         <div class="row">
                                             <div class="col-lg-8">
@@ -81,8 +81,8 @@
                                                     </button>
                                                     <div class="dropdown-menu border-0 border"
                                                         aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Unpublish</a>
+                                                        <a class="dropdown-item" href="#"><i class='bx bx-edit mr-2'></i>Edit</a>
+                                                        <a class="dropdown-item" href="#"><i class='bx bx-window-close mr-2'></i>Unpublish</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -25,7 +25,7 @@
                             @csrf
                             <div class="blog-widget blog-tags mt-2">
                                 <h3>Buat Tulisan</h3>
-                                <input type="text" class="form-control mb-3" placeholder="Title">
+                                <input type="text" class="form-control mb-3" placeholder="Title" name="title" required autocomplete="OFF">
                                 <textarea class="form-control" name="content" id="editor" ></textarea>
                             </div>
                             <div class="blog-widget blog-tags mt-2">
@@ -33,12 +33,6 @@
                                 <ul>
                                     @foreach ($tags as $t)
                                         <li class="mr-4">
-                                            {{-- <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="{{ $t->id }}"
-                                                    name="tags[]">
-                                                <label class="form-check-label"
-                                                    for="defaultCheck1">{{ $t->name_tags }}</label>
-                                            </div> --}}
                                             <div data-toggle="buttons">
                                                 <label class="btn btn-outline-dark">
                                                     <input type="checkbox" autocomplete="off" class="-ml-2"
@@ -52,7 +46,7 @@
                                 </ul>
                             </div>
                             <div class="text-right mt-2">
-                                <button type="button"
+                                <button type="submit"
                                     class="account-btn btn-outline-dark bg-transparent text-dark border border-dark">Save as
                                     Draft</button>
                                 <button type="submit" class="account-btn">Publish</button>

@@ -12,4 +12,8 @@ class Tags extends Model
     public function getIncrementing(){
         return false;
     }
+
+    public function post_tags(){
+        return $this->hasMany(Post_tags::class);
+    }
 }

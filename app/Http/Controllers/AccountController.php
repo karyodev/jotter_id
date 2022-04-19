@@ -85,14 +85,17 @@ class AccountController extends Controller
         $tags = request()->input('tags');
         if($tags){
             $validateData = request()->validate([
+                'title' => 'required|min:3',
                 'content' => 'required|min:3',
             ]);
             $id = Jotter::makeid(10, 'BLOG', 'blogs' );
             $data = new Blog;
             $data->id = $id;
             $data->user = auth()->user()->id;
+            $data->title = $validateData['title'];
             $data->post = $validateData['content'];
-            $data->status_blogs = 'aktif';
+            $data->type_blogs = 'FREE';
+            $data->status_blogs = 'Publish';
             $data->created_blogs = Carbon::now();
             $data->save();
 
@@ -101,8 +104,8 @@ class AccountController extends Controller
                 $id_pt = Jotter::makeid(10, 'PT', 'post_tags' );
                 $data = new Post_tags;
                 $data->id = $id_pt;
-                $data->blogs = $id;
-                $data->tags = $tags[$i];
+                $data->blog_id = $id;
+                $data->tags_id = $tags[$i];
                 $data->created_post_tags = Carbon::now();
                 $data->save();
             }
@@ -114,9 +117,9 @@ class AccountController extends Controller
     public function post(){
         $data = [
             'user' => User::where('id', auth()->user()->id)->first(),
-            'blogs' => Blog::where(['user' => auth()->user()->id, 'status_blogs' => 'aktif' ])->orderBy('created_blogs', 'DESC')->get(),
+            'blogs' => Blog::where(['user' => auth()->user()->id ])->orderBy('created_blogs', 'DESC')->get(),
         ];
-        return view('post/post', $data);    
+        return view('post/post', $data);
     }
 
     public function detailpost(){

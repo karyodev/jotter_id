@@ -40,34 +40,27 @@
                                             </li>
                                         </ul>
                                         @php
-                                            $xb = strpos($b->post, '</');
-                                            $xa = strpos($b->post, '>');
-                                            $judul = substr($b->post, $xa + 1, $xb - $xa - 1);
-                                            $text = preg_replace('/&nbsp;/', '', substr($b->post, (int) $xb + $xa + 2, 200));
+                                            $text =  substr($b->post, 0 , 200);
                                         @endphp
                                         <h3>
                                             <a href="/post/detailpost/{{ $b->id }}">
-                                                {{ $judul }}
+                                                {{ $b->title }}
                                             </a>
                                         </h3>
                                         <a href="/post/detailpost/{{ $b->id }}">
-                                            <p>{!! $text !!}</p>
+                                            <p>{!! $b->post !!}</p>
                                         </a>
                                         <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="candidate-skill">
                                                     <ul>
-                                                        <li
-                                                            class="border border-secondary px-2 text-sm mt-2 py-1 text-secondary">
-                                                            Business</li>
-                                                        <li
-                                                            class="border border-secondary px-2 text-sm mt-2 py-1 text-secondary">
-                                                            Job Tips</li>
-                                                        <li
-                                                            class="border border-secondary px-2 text-sm mt-2 py-1 text-secondary">
-                                                            Resume
-                                                        </li>
-
+                                                        @php
+                                                            $tags = $b->post_tags->find(2)->tags;
+                                                            dd($tags);
+                                                        @endphp
+                                                        {{-- @foreach ($tags as $t)
+                                                            <li class="border border-secondary px-2 text-sm mt-2 py-1 text-secondary"> {{ $tags->name_tags }}</li>
+                                                        @endforeach --}}
                                                     </ul>
                                                 </div>
                                             </div>

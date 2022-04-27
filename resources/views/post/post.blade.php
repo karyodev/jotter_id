@@ -55,7 +55,9 @@
                                                 <div class="candidate-skill">
                                                     <ul>
                                                         @foreach ($b->tags as $tags)
-                                                            {{ $tags->name_tags }}
+                                                        <li
+                                                            class="border border-secondary px-2 text-sm mt-2 py-1 text-secondary">
+                                                            {{ $tags->name_tags }}</li>
                                                         @endforeach
                                                     </ul>
                                                 </div>

@@ -129,7 +129,7 @@ class AccountController extends Controller
             request()->session()->put('post', $id);
             $data = [
                 'blogs' => Blog::join('users', 'users.id', '=', 'blogs.user')->where('blogs.id', $id)->first(),
-                'tags' => Blog_tags::join('tags', 'tags.id', '=', 'blog_tags.tags')->where('blogs', $id)->orderBy('name_tags', 'ASC')->get(),
+                'tags' => Blog_tags::join('tags', 'tags.id', '=', 'blog_tags.tags_id')->where('blog_id', $id)->orderBy('name_tags', 'ASC')->get(),
             ];
             return view('blog-detail', $data);
         } else {

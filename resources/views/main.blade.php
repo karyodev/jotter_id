@@ -84,44 +84,44 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto ">
                             <li class="nav-item">
-                                <a href="/" class="nav-link text-white">Home</a>
+                                <a href="/" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/about" class="nav-link active text-white">About</a>
+                                <a href="/about" class="nav-link active">About</a>
                             </li>
                             <li class="nav-item ">
-                                <a href="https://huustle.id/" target="_blank" class="nav-link text-white">Blog</a>
+                                <a href="https://huustle.id/" target="_blank" class="nav-link">Blog</a>
                             </li>
                         </ul>
                         {{-- UNTUK WELCOME + BUTTON LOGOUT --}}
                         @auth
-                            <div class="other-option">
-                                <ul class="navbar-nav m-auto ">
-                                    <li class="nav-item">
-                                        <a href="#"
-                                            class="nav-link dropdown-toggle active text-white">{{ auth()->user()->nama }}</a>
-                                        <ul class="dropdown-menu">
+                        <div class="other-option">
+                            <ul class="navbar-nav m-auto ">
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link dropdown-toggle active text-white">{{ auth()->user()->nama }}</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="/account" class="nav-link"><i class="bx bx-user mr-2"></i>
+                                                Profile</a>
+                                        </li>
+                                        <form action="/logout" method="POST">
+                                            @csrf
                                             <li class="nav-item">
-                                                <a href="/account" class="nav-link"><i class="bx bx-user mr-2"></i>
-                                                    Profile</a>
+                                                <div class="nav-link">
+                                                    <button type="submit" class="btn btn-dark w-100 text-left"> <i
+                                                            class='bx bx-log-out mr-2'></i>Log Out</button>
+                                                </div>
                                             </li>
-                                            <form action="/logout" method="POST">
-                                                @csrf
-                                                <li class="nav-item">
-                                                    <div class="nav-link">
-                                                        <button type="submit" class="btn btn-dark w-100 text-left"> <i
-                                                                class='bx bx-log-out mr-2'></i>Log Out</button>
-                                                    </div>
-                                                </li>
-                                            </form>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                                        </form>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                         @else
-                            <div class="other-option">
-                                <a href="/login" class="signin-btn bg-white text-dark">Sign In</a>
-                            </div>
+                        <div class="other-option">
+                            <a href="/login" class="signin-btn bg-white text-dark">Sign In</a>
+                        </div>
                         @endauth
                     </div>
                 </nav>

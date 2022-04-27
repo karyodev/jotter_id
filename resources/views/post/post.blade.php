@@ -54,13 +54,9 @@
                                             <div class="col-lg-8">
                                                 <div class="candidate-skill">
                                                     <ul>
-                                                        @php
-                                                            $tags = $b->post_tags->find(2)->tags;
-                                                            dd($tags);
-                                                        @endphp
-                                                        {{-- @foreach ($tags as $t)
-                                                            <li class="border border-secondary px-2 text-sm mt-2 py-1 text-secondary"> {{ $tags->name_tags }}</li>
-                                                        @endforeach --}}
+                                                        @foreach ($b->tags as $tags)
+                                                            {{ $tags->name_tags }}
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>

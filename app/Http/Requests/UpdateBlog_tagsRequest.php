@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePost_tagsRequest extends FormRequest
+class UpdateBlog_tagsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

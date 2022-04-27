@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post_tags;
-use App\Http\Requests\StorePost_tagsRequest;
-use App\Http\Requests\UpdatePost_tagsRequest;
+use App\Models\Blog_tags;
+use App\Http\Requests\StoreBlog_tagsRequest;
+use App\Http\Requests\UpdateBlog_tagsRequest;
 
-class PostTagsController extends Controller
+class BlogTagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class PostTagsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePost_tagsRequest  $request
+     * @param  \App\Http\Requests\StoreBlog_tagsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePost_tagsRequest $request)
+    public function store(StoreBlog_tagsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class PostTagsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post_tags  $post_tags
+     * @param  \App\Models\Blog_tags  $blog_tags
      * @return \Illuminate\Http\Response
      */
-    public function show(Post_tags $post_tags)
+    public function show(Blog_tags $blog_tags)
     {
         //
     }
@@ -53,10 +53,10 @@ class PostTagsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post_tags  $post_tags
+     * @param  \App\Models\Blog_tags  $blog_tags
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post_tags $post_tags)
+    public function edit(Blog_tags $blog_tags)
     {
         //
     }
@@ -64,11 +64,11 @@ class PostTagsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePost_tagsRequest  $request
-     * @param  \App\Models\Post_tags  $post_tags
+     * @param  \App\Http\Requests\UpdateBlog_tagsRequest  $request
+     * @param  \App\Models\Blog_tags  $blog_tags
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePost_tagsRequest $request, Post_tags $post_tags)
+    public function update(UpdateBlog_tagsRequest $request, Blog_tags $blog_tags)
     {
         //
     }
@@ -76,10 +76,10 @@ class PostTagsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post_tags  $post_tags
+     * @param  \App\Models\Blog_tags  $blog_tags
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post_tags $post_tags)
+    public function destroy(Blog_tags $blog_tags)
     {
         //
     }

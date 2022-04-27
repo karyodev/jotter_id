@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Helpers\Jotter;
 use App\Models\Blog;
 use App\Models\Post_tags;
+use App\Models\Blog_tags;
 use App\Models\Socials;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -101,12 +102,12 @@ class AccountController extends Controller
 
             $n = count($tags);
             for ($i=0; $i < $n ; $i++) { 
-                $id_pt = Jotter::makeid(10, 'PT', 'post_tags' );
-                $data = new Post_tags;
+                $id_pt = Jotter::makeid(10, 'BT', 'blog_tags' );
+                $data = new Blog_tags;
                 $data->id = $id_pt;
                 $data->blog_id = $id;
                 $data->tags_id = $tags[$i];
-                $data->created_post_tags = Carbon::now();
+                $data->created_blog_tags = Carbon::now();
                 $data->save();
             }
         }

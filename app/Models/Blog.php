@@ -18,4 +18,8 @@ class Blog extends Model
     public function post_tags(){
         return $this->hasMany(Post_tags::class);
     }
+
+    public function tags(){
+        return $this->belongsToMany(Tags::class);
+    }
 }

@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post_tags', function (Blueprint $table) {
+        Schema::create('blog_tags', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('blog_id');
             $table->string('tags_id');
-            $table->dateTime('created_post_tags');
+            $table->dateTime('created_blog_tags');
             $table->foreign('blog_id')->references('id')->on('blogs');
             $table->foreign('tags_id')->references('id')->on('tags');
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tags');
+        Schema::dropIfExists('blog_tags');
     }
 };

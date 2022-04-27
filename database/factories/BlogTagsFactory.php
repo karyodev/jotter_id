@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post_tags>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Blog_tags>
  */
-class PostTagsFactory extends Factory
+class BlogTagsFactory extends Factory
 {
     /**
      * Define the model's default state.

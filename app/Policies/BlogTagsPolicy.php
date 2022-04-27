@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Post_tags;
+use App\Models\Blog_tags;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PostTagsPolicy
+class BlogTagsPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class PostTagsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Post_tags  $postTags
+     * @param  \App\Models\Blog_tags  $blogTags
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Post_tags $postTags)
+    public function view(User $user, Blog_tags $blogTags)
     {
         //
     }
@@ -48,10 +48,10 @@ class PostTagsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Post_tags  $postTags
+     * @param  \App\Models\Blog_tags  $blogTags
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Post_tags $postTags)
+    public function update(User $user, Blog_tags $blogTags)
     {
         //
     }
@@ -60,10 +60,10 @@ class PostTagsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Post_tags  $postTags
+     * @param  \App\Models\Blog_tags  $blogTags
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Post_tags $postTags)
+    public function delete(User $user, Blog_tags $blogTags)
     {
         //
     }
@@ -72,10 +72,10 @@ class PostTagsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Post_tags  $postTags
+     * @param  \App\Models\Blog_tags  $blogTags
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Post_tags $postTags)
+    public function restore(User $user, Blog_tags $blogTags)
     {
         //
     }
@@ -84,10 +84,10 @@ class PostTagsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Post_tags  $postTags
+     * @param  \App\Models\Blog_tags  $blogTags
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Post_tags $postTags)
+    public function forceDelete(User $user, Blog_tags $blogTags)
     {
         //
     }

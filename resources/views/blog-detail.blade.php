@@ -13,14 +13,10 @@
                 <div class="blog-dedails-text text-center">
                     <div class="blog-details-img text-center">
                         @php
-                            $xb = strpos($blogs->post, '</');
-                            $xa = strpos($blogs->post, '>');
-                            $judul = substr($blogs->post, $xa+1, $xb - $xa-1);
-                            $text =  preg_replace("/&nbsp;/","", substr($blogs->post, (int)$xb+$xa+2, 200));;
                             $n = count($tags);
                             $i=0;
                         @endphp
-                        <h3 class="post-title">{{ $judul }}</h3>
+                        <h3 class="post-title">{{ $blogs->title }}</h3>
                         <div class="blog-meta">
                             <ul>
                                 <li class="breadcrumb-item active" aria-current="page">@foreach ($tags as $t)
@@ -44,7 +40,7 @@
                         </div>
                         <img src="assets/img/blog/blog-details.jpg" alt="blog details image">
                     </div>
-                    {!! $text !!}
+                    {!! $blogs->post !!}
 
                     <div class="details-tag">
                         <ul>

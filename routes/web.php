@@ -30,6 +30,7 @@ Route::controller(AccountController::class)->group(function(){
     Route::get('/post', 'post');
     Route::get('/post/detailpost/{id}', 'findpost');
     Route::get('/detailpost', 'detailpost');
+    Route::get('/changepost/{id}/{tipe}', 'changepost');
 });
 
 // BLOG DETAIL

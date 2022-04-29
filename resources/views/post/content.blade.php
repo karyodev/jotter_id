@@ -21,7 +21,7 @@
                 @include('sidebar-account')
                 <div class="col-md-8">
                     <div class="account-details">
-                        <form class="basic-info" action="/content" method="POST">
+                        <form class="basic-info" action="#" method="POST">
                             @csrf
                             <div class="blog-widget blog-tags mt-2">
                                 <h3>Buat Tulisan</h3>
@@ -42,14 +42,14 @@
                                             </div>
                                         </li>
                                     @endforeach
-
                                 </ul>
                             </div>
+                            <input type="text" id="tipe" name="tipe" hidden>
                             <div class="text-right mt-2">
-                                <button type="submit"
+                                <button type="submit" id="draft"
                                     class="account-btn btn-outline-dark bg-transparent text-dark border border-dark">Save as
                                     Draft</button>
-                                <button type="submit" class="account-btn">Publish</button>
+                                <button type="submit" id="publish" class="account-btn">Publish</button>
                             </div>
                         </form>
                     </div>
@@ -70,6 +70,18 @@
                 placeholder: 'Hello Bootstrap 4',
                 tabsize: 2,
                 height: 500
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function (){
+            $('#publish').on('click', function(){
+                $('#tipe').val('Published');
+            });
+
+            $('#draft').on('click', function(){
+                $('#tipe').val('Draft');
             });
         });
     </script>

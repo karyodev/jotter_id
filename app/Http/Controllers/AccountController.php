@@ -89,6 +89,7 @@ class AccountController extends Controller
                 'title' => 'required|min:3',
                 'content' => 'required|min:3',
             ]);
+            $tipe = request()->input('tipe');
             $id = Jotter::makeid(10, 'BLOG', 'blogs' );
             $data = new Blog;
             $data->id = $id;
@@ -96,7 +97,7 @@ class AccountController extends Controller
             $data->title = $validateData['title'];
             $data->post = $validateData['content'];
             $data->type_blogs = 'FREE';
-            $data->status_blogs = 'Publish';
+            $data->status_blogs = $tipe;
             $data->created_blogs = Carbon::now();
             $data->save();
 
@@ -140,6 +141,13 @@ class AccountController extends Controller
     public function findpost($id){
         request()->session()->put('post', $id);
         return redirect('detailpost');
+    }
+
+    public function changepost($id, $tipe){
+        $blog = Blog::find($id);
+        $blog->status_blogs = $tipe;
+        $blog->save();
+        return redirect('/post');
     }
 
     // TAGS

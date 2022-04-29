@@ -34,9 +34,16 @@
                                                 <i class='bx bx-calendar'></i>
                                                 {{ date('d F Y', strtotime($b->created_blogs)) }}
                                             </li>
-                                            <li class="text-success">
+                                            @php
+                                                if($b->status_blogs=='Published'){
+                                                    $class = 'text-success';
+                                                } else {
+                                                    $class = 'text-secondary';
+                                                }
+                                            @endphp
+                                            <li class="{{ $class }}">
                                                 <i class='bx bx-menu-alt-left'></i>
-                                                Published
+                                                {{ $b->status_blogs }}
                                             </li>
                                         </ul>
                                         @php
@@ -72,8 +79,13 @@
                                                     </button>
                                                     <div class="dropdown-menu border-0 border"
                                                         aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#"><i class='bx bx-edit mr-2'></i>Edit</a>
-                                                        <a class="dropdown-item" href="#"><i class='bx bx-window-close mr-2'></i>Unpublish</a>
+                                                        <?php
+                                                            if($b->status_blogs=='Published'){?>
+                                                                <a class="dropdown-item" href="/changepost/{{ $b->id }}/Draft"><i class='bx bx-window-close mr-2'></i>Unpublish</a>
+                                                            <?php } else { ?>
+                                                                <a class="dropdown-item" href="#"><i class='bx bx-edit mr-2'></i>Edit</a>
+                                                                <a class="dropdown-item" href="/changepost/{{ $b->id }}/Published"><i class='bx bx-window-close mr-2'></i>Publish</a>
+                                                            <?php }?>
                                                     </div>
                                                 </div>
                                             </div>
